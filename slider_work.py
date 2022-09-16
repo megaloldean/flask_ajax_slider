@@ -13,19 +13,19 @@ app = Flask(__name__)
 def index():
     return render_template('index_2.html')
 
-@app.route("/add", methods=["POST"])
-def add():
-    a = request.form.get("a", 0, type=float)
-    b = request.form.get("b", 0, type=float)
-    return jsonify(result=a + b)
 
 @app.route('/login', methods=["POST","GET"])
 def login():
     if request.method == "POST":
-        red = request.form['red']
-        green = request.form['green']
-        blue = request.form['blue']
-        print(red,green,blue)
+        h1 = request.form['red']
+        s1 = request.form['green']
+        v1 = request.form['blue']
+
+        h2 = request.form['red2']
+        s2 = request.form['green2']
+        v2 = request.form['blue2']
+        print("h1 =",h1,"s1 =",s1,"v1=",v1)
+        print("h2 =",h2,"s2 =",s2,"v2=",v2)
     else:
         print("Method = GET!")
         return ''
